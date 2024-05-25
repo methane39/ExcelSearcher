@@ -5,9 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExcelSearcher"
         mc:Ignorable="d"
-        Title="MainWindow" Height="180" Width="450" ResizeMode="NoResize">
+        Title="学号名字搜索器" Height="200" Width="450" ResizeMode="NoResize">
     <Grid>
-        <Button Content="In" Height="20" Width="55" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"></Button>
-        <Button Content="Out" Height="20" Width="55" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"></Button>
+        <Button Click="InClick" Content="In" Height="20" Width="55" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <TextBox Name="InTextBox" 
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 Height="20" Width="350" 
+                 Margin="0,10,10,0"
+                 local:TextBoxPlaceholderBehavior.PlaceholderColor="Gray"
+                 local:TextBoxPlaceholderBehavior.PlaceholderText="请选择包含xls、xlsx后缀的文件的文件夹"
+                 IsReadOnly="True"
+                 />
+        <Button Click="OutClick" Content="Out" Height="20" Width="55" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
+        <TextBox Name="OutTextBox" 
+                 HorizontalAlignment="Right" 
+                 VerticalAlignment="Top"
+                 Height="20" Width="350" 
+                 Margin="0,40,10,0"
+                 local:TextBoxPlaceholderBehavior.PlaceholderColor="Gray"
+                 local:TextBoxPlaceholderBehavior.PlaceholderText="请选择结果输出文件夹"
+                 IsReadOnly="True"
+                 />
+        <TextBox Name="nameBox"
+                 HorizontalAlignment="Left"
+                 Height="20" Width="200"
+                 Margin="10,10,0,0"
+                 local:TextBoxPlaceholderBehavior.PlaceholderText="请输入名字"
+                 local:TextBoxPlaceholderBehavior.PlaceholderColor="Gray"
+            />
+        <TextBox Name="idBox"
+                 HorizontalAlignment="Right"
+                 Height="20" Width="200"
+                 Margin="0,10,10,0"
+                 local:TextBoxPlaceholderBehavior.PlaceholderText="请输入学号"
+                 local:TextBoxPlaceholderBehavior.PlaceholderColor="Gray"
+            />
+        <StackPanel Name="ProgressContainer" HorizontalAlignment="Center"
+                    Height="40" Width="430"
+                    Margin="0,100,0,0"/>
+        <Button Name="StartSearch"
+                HorizontalAlignment="Center"
+                Height="40" Width="160"
+                Margin="0,100,0,0"
+                Content="开始搜索"
+                Click="SearchClick"
+            />
     </Grid>
 </Window>
